@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="style.css?v=150">
-  <link rel="stylesheet" href="theme.css?v=10">
+  <link rel="stylesheet" href="theme.css?v=16">
 </head>
 <body>
 
@@ -40,69 +40,56 @@
   <section class="poster-hero">
    
     <h1 class="page-title poster-title">TYPOGRAPHY</h1>
-    <p class="poster-intro">Two books that read themselves — pages paired into spreads, turning on their own, spread after spread.</p>
+    <p class="poster-intro">Two books, read spread by spread. Click a page, use the arrows or pick a spread below.</p>
     <a class="poster-back" href="works.html">← Back to Works</a>
   </section>
 
-  <section class="book-stage">
-    <div class="book" data-prefix="images/book/p" data-from="2" data-to="15" aria-label="Typography book, auto-turning through its spreads">
-      <div class="book-shadow" aria-hidden="true"></div>
-      <div class="book-page book-page-left"><img alt="left page"></div>
-      <div class="book-page book-page-right"><img alt="right page"></div>
-      <div class="book-cast" aria-hidden="true"></div>
-      <div class="leaf">
-        <div class="leaf-face leaf-front"><img alt=""></div>
-        <div class="leaf-face leaf-back"><img alt=""></div>
-        <div class="leaf-sheen" aria-hidden="true"></div>
-      </div>
-      <div class="leaf">
-        <div class="leaf-face leaf-front"><img alt=""></div>
-        <div class="leaf-face leaf-back"><img alt=""></div>
-        <div class="leaf-sheen" aria-hidden="true"></div>
-      </div>
-      <div class="leaf">
-        <div class="leaf-face leaf-front"><img alt=""></div>
-        <div class="leaf-face leaf-back"><img alt=""></div>
-        <div class="leaf-sheen" aria-hidden="true"></div>
-      </div>
-      <div class="leaf">
-        <div class="leaf-face leaf-front"><img alt=""></div>
-        <div class="leaf-face leaf-back"><img alt=""></div>
-        <div class="leaf-sheen" aria-hidden="true"></div>
-      </div>
+  <!-- Book 01: pages 2-15 of images/book/pNN.jpg, shown two at a time. The
+       script below builds the spreads and the thumbnail row. -->
+  <section class="ty-book" data-prefix="images/book/p" data-from="2" data-to="15" aria-label="Typography book">
+    <header class="ty-head">
+      <span class="ty-index">01</span>
+      <h2>Typography Book</h2>
+      <span class="ty-meta">14 pages · 7 spreads</span>
+    </header>
+
+    <div class="ty-spread" tabindex="0" aria-live="polite">
+      <button class="ty-page ty-page-left" type="button" aria-label="Previous spread"><img alt="" decoding="async"></button>
+      <button class="ty-page ty-page-right" type="button" aria-label="Next spread"><img alt="" decoding="async"></button>
     </div>
-    <p class="book-caption">SPREAD <span class="book-num">01</span> / <span class="book-total">07</span></p>
+
+    <div class="ty-bar">
+      <button class="ty-btn ty-prev" type="button" aria-label="Previous spread">←</button>
+      <span class="ty-count"><b class="ty-num">01</b> / <span class="ty-total">07</span></span>
+      <button class="ty-btn ty-next" type="button" aria-label="Next spread">→</button>
+    </div>
+
+    <div class="ty-thumbs" role="tablist" aria-label="Spreads"></div>
   </section>
 
-  <section class="book-stage">
-    <div class="book" data-prefix="images/book2/p" data-from="2" data-to="31" aria-label="Type specimen book, auto-turning through its spreads">
-      <div class="book-shadow" aria-hidden="true"></div>
-      <div class="book-page book-page-left"><img alt="left page"></div>
-      <div class="book-page book-page-right"><img alt="right page"></div>
-      <div class="book-cast" aria-hidden="true"></div>
-      <div class="leaf">
-        <div class="leaf-face leaf-front"><img alt=""></div>
-        <div class="leaf-face leaf-back"><img alt=""></div>
-        <div class="leaf-sheen" aria-hidden="true"></div>
-      </div>
-      <div class="leaf">
-        <div class="leaf-face leaf-front"><img alt=""></div>
-        <div class="leaf-face leaf-back"><img alt=""></div>
-        <div class="leaf-sheen" aria-hidden="true"></div>
-      </div>
-      <div class="leaf">
-        <div class="leaf-face leaf-front"><img alt=""></div>
-        <div class="leaf-face leaf-back"><img alt=""></div>
-        <div class="leaf-sheen" aria-hidden="true"></div>
-      </div>
-      <div class="leaf">
-        <div class="leaf-face leaf-front"><img alt=""></div>
-        <div class="leaf-face leaf-back"><img alt=""></div>
-        <div class="leaf-sheen" aria-hidden="true"></div>
-      </div>
+  <!-- Book 02: pages 2-31 of images/book2/pNN.jpg, shown two at a time. The
+       script below builds the spreads and the thumbnail row. -->
+  <section class="ty-book" data-prefix="images/book2/p" data-from="2" data-to="31" aria-label="Type specimen book">
+    <header class="ty-head">
+      <span class="ty-index">02</span>
+      <h2>Type Specimen</h2>
+      <span class="ty-meta">30 pages · 15 spreads</span>
+    </header>
+
+    <div class="ty-spread" tabindex="0" aria-live="polite">
+      <button class="ty-page ty-page-left" type="button" aria-label="Previous spread"><img alt="" decoding="async"></button>
+      <button class="ty-page ty-page-right" type="button" aria-label="Next spread"><img alt="" decoding="async"></button>
     </div>
-    <p class="book-caption">SPREAD <span class="book-num">01</span> / <span class="book-total">15</span></p>
+
+    <div class="ty-bar">
+      <button class="ty-btn ty-prev" type="button" aria-label="Previous spread">←</button>
+      <span class="ty-count"><b class="ty-num">01</b> / <span class="ty-total">15</span></span>
+      <button class="ty-btn ty-next" type="button" aria-label="Next spread">→</button>
+    </div>
+
+    <div class="ty-thumbs" role="tablist" aria-label="Spreads"></div>
   </section>
+
 </main>
 
 <footer class="footer">
@@ -111,5 +98,78 @@
 </footer>
 
 <script src="script.js?v=150"></script>
+<script>
+  /* Typography spread viewer: one spread at a time, a short fade between
+     them. Click the right page / → for next, the left page / ← for previous,
+     or a thumbnail to jump. Keyboard arrows work while the spread is focused. */
+  (function () {
+    const pad = (n) => String(n).padStart(2, '0');
+
+    document.querySelectorAll('.ty-book').forEach((book) => {
+      const prefix = book.dataset.prefix;
+      const from = +book.dataset.from, to = +book.dataset.to;
+      const spreads = [];
+      for (let p = from; p + 1 <= to; p += 2) spreads.push([prefix + pad(p) + '.jpg', prefix + pad(p + 1) + '.jpg']);
+
+      const spread = book.querySelector('.ty-spread');
+      const [imgL, imgR] = book.querySelectorAll('.ty-page img');
+      const num = book.querySelector('.ty-num');
+      const prev = book.querySelector('.ty-prev');
+      const next = book.querySelector('.ty-next');
+      const thumbs = book.querySelector('.ty-thumbs');
+
+      const thumbBtns = spreads.map((pair, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'ty-thumb';
+        b.setAttribute('role', 'tab');
+        b.setAttribute('aria-label', 'Spread ' + (i + 1));
+        b.innerHTML = '<img loading="lazy" decoding="async" alt="" src="' + pair[0] + '">' +
+                      '<img loading="lazy" decoding="async" alt="" src="' + pair[1] + '">';
+        b.addEventListener('click', () => go(i));
+        thumbs.appendChild(b);
+        return b;
+      });
+
+      let cur = -1;
+      function preload(i) {
+        (spreads[i] || []).forEach((src) => { const im = new Image(); im.src = src; });
+      }
+      function go(i) {
+        i = Math.max(0, Math.min(spreads.length - 1, i));
+        if (i === cur) return;
+        const first = cur < 0;
+        cur = i;
+        const show = () => {
+          imgL.src = spreads[i][0];
+          imgR.src = spreads[i][1];
+          imgL.alt = 'Page ' + (from + i * 2);
+          imgR.alt = 'Page ' + (from + i * 2 + 1);
+          spread.classList.remove('is-out');
+        };
+        if (first) show();
+        else { spread.classList.add('is-out'); setTimeout(show, 180); }
+        num.textContent = pad(i + 1);
+        prev.disabled = i === 0;
+        next.disabled = i === spreads.length - 1;
+        thumbBtns.forEach((b, k) => b.setAttribute('aria-selected', k === i ? 'true' : 'false'));
+        const t = thumbBtns[i];
+        if (!first) thumbs.scrollTo({ left: t.offsetLeft - (thumbs.clientWidth - t.offsetWidth) / 2, behavior: 'smooth' });
+        preload(i + 1);
+      }
+
+      prev.addEventListener('click', () => go(cur - 1));
+      next.addEventListener('click', () => go(cur + 1));
+      book.querySelector('.ty-page-left').addEventListener('click', () => go(cur - 1));
+      book.querySelector('.ty-page-right').addEventListener('click', () => go(cur + 1));
+      spread.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur - 1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); go(cur + 1); }
+      });
+
+      go(0);
+    });
+  })();
+</script>
 </body>
 </html>

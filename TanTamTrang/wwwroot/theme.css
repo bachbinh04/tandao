@@ -131,6 +131,10 @@ body *:not(svg):not(svg *) { font-family: var(--t-font) !important; }
 
 .poster-title {
   padding-right: 0;
+  /* Works sub-page titles: plain white, no gradient */
+  background: none;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
   font-size: clamp(48px, 9.2vw, 140px);
 }
 
@@ -167,6 +171,21 @@ body *:not(svg):not(svg *) { font-family: var(--t-font) !important; }
   font: 400 13px/1.55 var(--t-font);
   color: var(--t-muted);
 }
+
+/* Poster page: show each description in full (style.css clamps it to
+   three lines, which the Works cards keep). */
+.pst-grid:not(.wks-grid) .pst-item p {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+/* A description written as several paragraphs (Trung Thu): keep the blank
+   line between them, as in the source text. */
+.pst-desc { margin-top: 8px; }
+.pst-desc > * { margin-top: 0; }
+.pst-desc > * + * { margin-top: .9em; }
+.pst-desc h2 { font-size: clamp(13px, 1vw, 15px); }
 
 .pst-meta {
   font: 500 11px var(--t-font);
@@ -315,6 +334,143 @@ body *:not(svg):not(svg *) { font-family: var(--t-font) !important; }
 
 .wks-grid .pst-item h2 { font-size: clamp(18px, 1.5vw, 24px); }
 .wks-grid .pst-item h2::after { content: none; }
+
+/* ---------- Typography ----------
+   A plain spread viewer (typography.html): two pages side by side, a short
+   fade between spreads, prev/next under it and a row of thumbnails. */
+.ty-book {
+  max-width: 1100px;
+  margin: 0 auto clamp(72px, 12vh, 140px);
+}
+
+.ty-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding-bottom: 14px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--t-rule);
+}
+
+.ty-index {
+  font: 700 13px var(--t-font);
+  color: var(--t-muted);
+}
+
+.ty-head h2 {
+  margin: 0;
+  font: 700 clamp(20px, 2vw, 28px)/1.1 var(--t-font);
+  letter-spacing: -.02em;
+}
+
+.ty-meta {
+  margin-left: auto;
+  font: 500 13px var(--t-font);
+  color: var(--t-muted);
+}
+
+.ty-spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* never taller than ~78% of the window, so the controls stay in view
+     (two 820x1158 pages side by side are 1.416 times as wide as tall) */
+  width: min(100%, calc(78vh * 1.416));
+  margin: 0 auto;
+  gap: 2px;
+  outline: none;
+  transition: opacity .18s ease;
+}
+
+.ty-spread.is-out { opacity: 0; }
+
+.ty-spread:focus-visible { box-shadow: 0 0 0 1px var(--t-rule-strong); }
+
+.ty-page {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: #111;
+  aspect-ratio: 820 / 1158;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ty-page-left { cursor: w-resize; }
+.ty-page-right { cursor: e-resize; }
+
+.ty-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ty-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.ty-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--t-rule-strong);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--t-paper);
+  font: 500 17px var(--t-font);
+  cursor: pointer;
+  transition: background .2s, color .2s, opacity .2s;
+}
+
+.ty-btn:hover:not(:disabled) { background: #fff; color: #000; }
+.ty-btn:disabled { opacity: .3; cursor: default; }
+
+.ty-count {
+  min-width: 70px;
+  text-align: center;
+  font: 500 14px var(--t-font);
+  color: var(--t-muted);
+}
+
+.ty-count b { color: var(--t-paper); font-weight: 700; }
+
+.ty-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+  padding-bottom: 6px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+
+.ty-thumb {
+  display: flex;
+  flex: none;
+  gap: 1px;
+  padding: 0;
+  border: 0;
+  background: none;
+  opacity: .4;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+
+.ty-thumb img {
+  width: 44px;
+  height: 62px;
+  object-fit: cover;
+  background: #111;
+}
+
+.ty-thumb:hover { opacity: .75; }
+.ty-thumb[aria-selected="true"] { opacity: 1; box-shadow: 0 2px 0 #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ty-spread { transition: none; }
+}
 
 /* ---------- Phones ---------- */
 @media (max-width: 900px) {
