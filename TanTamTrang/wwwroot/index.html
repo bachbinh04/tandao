@@ -23,112 +23,57 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap">
-  <link rel="stylesheet" href="home.css?v=10">
-  <link rel="preload" as="image" href="images/home/hero-portrait.jpg">
-</head>
+  <link rel="stylesheet" href="home.css?v=25">
+  </head>
 
 <body class="hp">
 
-  <!-- Home is its own page now: a bright, gridded portfolio front. It loads
-       home.css only, so nothing here can disturb style.css / script.js, which
-       the other pages still share. -->
-  <header class="hp-header">
-    <a class="hp-brand" href="index.html" aria-label="TanTamTrang home">
-      <span>TANTAMTRANG</span>
-    </a>
-    <nav class="hp-nav" aria-label="Main">
-      <a href="about.html">About</a>
-      <a href="works.html">Works</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <!-- Home is laid out as a typographic poster: a header of four columns,
+       a line of notes, the statement in very large type stepping from left
+       to right, and a footer row. Styles are in home.css only. -->
+  <!-- Background: images/transition-06.png under a dark veil, with film
+       grain on top (body::before / body::after in home.css). -->
 
-  <main>
-    <!-- Hero -->
-    <section class="hp-hero">
-      <div class="hp-hero-left">
-        <div class="hp-glow" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="hp-gridfield" aria-hidden="true">
-          <i style="grid-area:1/1/6/4"></i>
-          <i style="grid-area:2/4/10/7"></i>
-          <i style="grid-area:1/9/8/12"></i>
-          <i style="grid-area:4/12/8/15"></i>
-          <i style="grid-area:1/19/18/23"></i>
-          <i style="grid-area:10/2/16/7"></i>
-          <i style="grid-area:16/3/18/5"></i>
-          <i style="grid-area:11/12/14/19"></i>
-          <i style="grid-area:14/14/18/17"></i>
-          <i style="grid-area:8/9/11/12"></i>
-        </div>
+  <div class="pt-page">
+    <header class="pt-row pt-top">
+      <a class="pt-logo" href="index.html" aria-label="TanTamTrang home">TanTamTrang</a>
+    
+      
+      <nav class="pt-nav" aria-label="Main">
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-        <h1 class="hp-title reveal">Welcome To My Wolrd.</h1>
-
-        <p class="hp-tagline reveal">Visual-led,<br>research-driven<br>design.</p>
-        <a class="hp-viewwork reveal" href="works.html">View My Work <span aria-hidden="true">→</span></a>
-      </div>
-
-      <aside class="hp-hero-right">
-        <figure class="hp-portrait reveal">
-          <img src="images/home/hero-portrait.jpg" width="900" height="1600" alt="Thermal self portrait of Dao Trong Tan">
-        </figure>
-      </aside>
+    <section class="pt-row pt-notes">
+      <p class="pt-quote">I create research-driven visual experiences across 3D and experience design that challenge perspectives and leave lasting impressions.<br></p>
+      
+      <span class="pt-label">Visual<br>Designer</span>
     </section>
 
-    <!-- Introduction -->
-    <section class="hp-intro">
-      <span class="hp-pill reveal"><span class="dot" style="--c:#9a9a9a"></span>A Brief Introduction</span>
-      <p class="hp-intro-text reveal">I’m Tan, a Communication Design student at RMIT who chases ideas that feel <em class="hl-lime">unfamiliar, distinctive and meaningful</em>. Research gives every visual a reason to exist — across photography, 3D and experience design, I want work that makes people <em class="hl-grad">stop, look closer and remember.</em></p>
-    </section>
-
-    <!-- Gallery -->
-    <section class="hp-glimpse">
-      <div class="hp-glimpse-grid" aria-hidden="true">
-        <i style="grid-area:1/6/3/28"></i>
-        <i style="grid-area:3/28/7/35"></i>
+    <main class="pt-type">
+      <div class="pt-stage">
+        <h1 class="pt-statement">
+          <span class="pt-l pt-left">Welcome</span>
+          <span class="pt-l pt-left">to</span>
+          <span class="pt-l pt-right">my</span>
+          <span class="pt-l pt-right">world.</span>
+        </h1>
       </div>
-      <h2 class="hp-h2 reveal">A Glimpse into My Work</h2>
-      <div class="hp-gallery">
-        <a href="poster.html" class="hp-tile reveal-blur"><img src="images/home/g-poster.jpg" width="900" height="900" loading="lazy" alt="Made in Vietnam poster"><span class="hp-tile-cap"><b>01</b>Poster<i aria-hidden="true">↗</i></span></a>
-        <a href="3d-video.html" class="hp-tile reveal-blur"><img src="images/home/g-3d.jpg" width="900" height="900" loading="lazy" alt="Dinosaur skull at the Jurassic Era exhibition"><span class="hp-tile-cap"><b>02</b>3D / Video<i aria-hidden="true">↗</i></span></a>
-        <a href="photography.html" class="hp-tile reveal-blur"><img src="images/home/g-photo.jpg" width="900" height="900" loading="lazy" alt="Black and white photograph of a spider"><span class="hp-tile-cap"><b>03</b>Photography<i aria-hidden="true">↗</i></span></a>
-        <a href="digital-art.html" class="hp-tile reveal-blur"><img src="images/home/g-art.jpg" width="900" height="900" loading="lazy" alt="Lighthouse line drawing"><span class="hp-tile-cap"><b>04</b>Digital Art<i aria-hidden="true">↗</i></span></a>
-      </div>
-    </section>
+      <!-- From images/about-user-01 (1).png, resized for the web. It fills the
+           right-hand column between the two rules. -->
+      <figure class="pt-photo">
+        <img src="images/home/home-photo.jpg" width="1200" height="800" alt="Dao Trong Tan holding a camera" decoding="async">
+      </figure>
+    </main>
 
-    <!-- Call to action -->
-    <section class="hp-cta">
-      <div class="hp-cta-card reveal">
-        <h2><span class="dot" style="--c:#9a9a9a"></span>Have a project in mind?</h2>
-        <p>Open to freelance projects, collaborations and internships. Let’s make something people stop for.</p>
-      </div>
-      <a class="hp-btn-outline reveal" href="contact.html">Get In Touch <span aria-hidden="true">→</span></a>
-    </section>
-  </main>
-
-  <footer class="hp-footer">
-    <div class="hp-footer-top">
-    </div>
-   
-  </footer>
+    <footer class="pt-row pt-foot">
+     
+    </footer>
+  </div>
 
   <script>
-    // Fade sections in as they scroll into view; without IntersectionObserver
-    // (or with reduced motion) everything is simply shown.
-    (function () {
-      var els = document.querySelectorAll('.reveal, .reveal-blur');
-      if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        els.forEach(function (el) { el.classList.add('in'); });
-        return;
-      }
-      document.documentElement.classList.add('js-reveal');
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-        });
-      }, { rootMargin: '0px 0px -8% 0px' });
-      els.forEach(function (el) { io.observe(el); });
-    })();
-
     // Fade out before following a link to another page of the site
     // (the same rule as script.js on the other pages).
     (function () {

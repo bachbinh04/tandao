@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="style.css?v=150">
-  <link rel="stylesheet" href="theme.css?v=16">
+  <link rel="stylesheet" href="theme.css?v=35">
 </head>
 <body>
 
@@ -40,7 +40,7 @@
   <section class="poster-hero">
    
     <h1 class="page-title poster-title">TYPOGRAPHY</h1>
-    <p class="poster-intro">Two books, read spread by spread. Click a page, use the arrows or pick a spread below.</p>
+    <p class="poster-intro">Five books and publications, read spread by spread. Click a page or use the arrows.</p>
     <a class="poster-back" href="works.html">← Back to Works</a>
   </section>
 
@@ -64,7 +64,6 @@
       <button class="ty-btn ty-next" type="button" aria-label="Next spread">→</button>
     </div>
 
-    <div class="ty-thumbs" role="tablist" aria-label="Spreads"></div>
   </section>
 
   <!-- Book 02: pages 2-31 of images/book2/pNN.jpg, shown two at a time. The
@@ -87,89 +86,81 @@
       <button class="ty-btn ty-next" type="button" aria-label="Next spread">→</button>
     </div>
 
-    <div class="ty-thumbs" role="tablist" aria-label="Spreads"></div>
+  </section>
+
+  <!-- Book 03: pages 2-8 of images/book3/pNN.jpg. Each PDF page is already a
+       whole landscape spread, so data-single shows them one at a time. -->
+  <section class="ty-book ty-book-single" data-single data-prefix="images/book3/p" data-from="2" data-to="8" aria-label="Design Citizenship, Assessment 3">
+    <header class="ty-head">
+      <span class="ty-index">03</span>
+      <h2>Design Citizenship</h2>
+      <span class="ty-meta">7 spreads</span>
+    </header>
+
+    <div class="ty-spread" tabindex="0" aria-live="polite">
+      <button class="ty-page ty-page-single" type="button" aria-label="Previous or next page"><img alt="" decoding="async"></button>
+    </div>
+
+    <div class="ty-bar">
+      <button class="ty-btn ty-prev" type="button" aria-label="Previous page">←</button>
+      <span class="ty-count"><b class="ty-num">01</b> / <span class="ty-total">07</span></span>
+      <button class="ty-btn ty-next" type="button" aria-label="Next page">→</button>
+      <a class="ty-full" href="images/book3/p02.jpg" target="_blank" rel="noopener">Full size ↗</a>
+    </div>
+
+  </section>
+
+  <!-- Book 04: pages 2-7 of images/book4/pNN.jpg. Each PDF page is already a
+       whole landscape spread, so data-single shows them one at a time. -->
+  <section class="ty-book ty-book-single" data-single data-prefix="images/book4/p" data-from="2" data-to="7" aria-label="Designing in Relation, Assessment 2">
+    <header class="ty-head">
+      <span class="ty-index">04</span>
+      <h2>Designing in Relation</h2>
+      <span class="ty-meta">6 pages</span>
+    </header>
+
+    <div class="ty-spread" tabindex="0" aria-live="polite">
+      <button class="ty-page ty-page-single" type="button" aria-label="Previous or next page"><img alt="" decoding="async"></button>
+    </div>
+
+    <div class="ty-bar">
+      <button class="ty-btn ty-prev" type="button" aria-label="Previous page">←</button>
+      <span class="ty-count"><b class="ty-num">01</b> / <span class="ty-total">06</span></span>
+      <button class="ty-btn ty-next" type="button" aria-label="Next page">→</button>
+      <a class="ty-full" href="images/book4/p02.jpg" target="_blank" rel="noopener">Full size ↗</a>
+    </div>
+
+  </section>
+
+  <!-- Book 05: pages 2-13 of images/book5/pNN.jpg. Each PDF page is already a
+       whole landscape spread, so data-single shows them one at a time. -->
+  <section class="ty-book ty-book-single" data-single data-prefix="images/book5/p" data-from="2" data-to="13" aria-label="Music Festival magazine">
+    <header class="ty-head">
+      <span class="ty-index">05</span>
+      <h2>Music Festival</h2>
+      <span class="ty-meta">12 spreads</span>
+    </header>
+
+    <div class="ty-spread" tabindex="0" aria-live="polite">
+      <button class="ty-page ty-page-single" type="button" aria-label="Previous or next page"><img alt="" decoding="async"></button>
+    </div>
+
+    <div class="ty-bar">
+      <button class="ty-btn ty-prev" type="button" aria-label="Previous page">←</button>
+      <span class="ty-count"><b class="ty-num">01</b> / <span class="ty-total">12</span></span>
+      <button class="ty-btn ty-next" type="button" aria-label="Next page">→</button>
+      <a class="ty-full" href="images/book5/p02.jpg" target="_blank" rel="noopener">Full size ↗</a>
+    </div>
+
   </section>
 
 </main>
 
 <footer class="footer">
-  <span>© TAN 2026</span>
   <a href="works.html">Back to Works ↑</a>
 </footer>
 
-<script src="script.js?v=150"></script>
-<script>
-  /* Typography spread viewer: one spread at a time, a short fade between
-     them. Click the right page / → for next, the left page / ← for previous,
-     or a thumbnail to jump. Keyboard arrows work while the spread is focused. */
-  (function () {
-    const pad = (n) => String(n).padStart(2, '0');
-
-    document.querySelectorAll('.ty-book').forEach((book) => {
-      const prefix = book.dataset.prefix;
-      const from = +book.dataset.from, to = +book.dataset.to;
-      const spreads = [];
-      for (let p = from; p + 1 <= to; p += 2) spreads.push([prefix + pad(p) + '.jpg', prefix + pad(p + 1) + '.jpg']);
-
-      const spread = book.querySelector('.ty-spread');
-      const [imgL, imgR] = book.querySelectorAll('.ty-page img');
-      const num = book.querySelector('.ty-num');
-      const prev = book.querySelector('.ty-prev');
-      const next = book.querySelector('.ty-next');
-      const thumbs = book.querySelector('.ty-thumbs');
-
-      const thumbBtns = spreads.map((pair, i) => {
-        const b = document.createElement('button');
-        b.type = 'button';
-        b.className = 'ty-thumb';
-        b.setAttribute('role', 'tab');
-        b.setAttribute('aria-label', 'Spread ' + (i + 1));
-        b.innerHTML = '<img loading="lazy" decoding="async" alt="" src="' + pair[0] + '">' +
-                      '<img loading="lazy" decoding="async" alt="" src="' + pair[1] + '">';
-        b.addEventListener('click', () => go(i));
-        thumbs.appendChild(b);
-        return b;
-      });
-
-      let cur = -1;
-      function preload(i) {
-        (spreads[i] || []).forEach((src) => { const im = new Image(); im.src = src; });
-      }
-      function go(i) {
-        i = Math.max(0, Math.min(spreads.length - 1, i));
-        if (i === cur) return;
-        const first = cur < 0;
-        cur = i;
-        const show = () => {
-          imgL.src = spreads[i][0];
-          imgR.src = spreads[i][1];
-          imgL.alt = 'Page ' + (from + i * 2);
-          imgR.alt = 'Page ' + (from + i * 2 + 1);
-          spread.classList.remove('is-out');
-        };
-        if (first) show();
-        else { spread.classList.add('is-out'); setTimeout(show, 180); }
-        num.textContent = pad(i + 1);
-        prev.disabled = i === 0;
-        next.disabled = i === spreads.length - 1;
-        thumbBtns.forEach((b, k) => b.setAttribute('aria-selected', k === i ? 'true' : 'false'));
-        const t = thumbBtns[i];
-        if (!first) thumbs.scrollTo({ left: t.offsetLeft - (thumbs.clientWidth - t.offsetWidth) / 2, behavior: 'smooth' });
-        preload(i + 1);
-      }
-
-      prev.addEventListener('click', () => go(cur - 1));
-      next.addEventListener('click', () => go(cur + 1));
-      book.querySelector('.ty-page-left').addEventListener('click', () => go(cur - 1));
-      book.querySelector('.ty-page-right').addEventListener('click', () => go(cur + 1));
-      spread.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur - 1); }
-        if (e.key === 'ArrowRight') { e.preventDefault(); go(cur + 1); }
-      });
-
-      go(0);
-    });
-  })();
-</script>
+<script src="script.js?v=151"></script>
+<script src="spread-viewer.js?v=3"></script>
 </body>
 </html>

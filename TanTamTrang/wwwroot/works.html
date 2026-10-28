@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="style.css?v=150">
-  <link rel="stylesheet" href="theme.css?v=16">
+  <link rel="stylesheet" href="theme.css?v=35">
 </head>
 <body class="wks-body">
 
@@ -38,31 +38,30 @@
 
 <main class="pst-page wks-page">
   <section class="wks-hero">
-    <div>
-      
-      <h1 class="wks-title"><span>My</span><span>Works</span></h1>
-    </div>
+    <h1 class="wks-title"><span>My</span><span>Works</span></h1>
+    <div class="wks-intro">
+
     
+    </div>
   </section>
 
-  <!-- Same staircase as the Poster page (style.css .pst-*), one card per
-       category. Each card links to its page; there is no #photoLb here, so
-       script.js leaves the lightbox off and a click simply navigates. -->
-  <section class="pst-grid wks-grid">
+  <!-- One row of equal cards, one per category (theme.css .wks-grid). Each
+       card links to its page. -->
+  <section class="wks-grid">
     <a class="pst-item" href="poster.html">
       <div class="pst-img"><img src="images/poster-grid/made-in-vietnam.jpg" width="900" height="1158" alt="Made In Vietnam poster" loading="lazy" decoding="async"><span class="wks-open" aria-hidden="true">Open ↗</span></div>
       <div class="wks-cap">
         <h2>POSTER</h2>
-        <p>Seven posters — festival, editorial, soundtrack, food, product and environmental, each built from image and type.</p>
-        <div class="pst-meta"><span>07 WORKS / PRINT</span><span>N°01</span></div>
+        <p>Twelve posters — festival, editorial, music, food, cultural, environmental and typographic, each built from image and type.</p>
+        <div class="pst-meta"><span>12 WORKS / PRINT</span><span>N°01</span></div>
       </div>
     </a>
     <a class="pst-item" href="typography.html">
       <div class="pst-img"><img src="images/book/p02.jpg" width="820" height="1160" alt="Esquire cover from the typography book" loading="lazy" decoding="async"><span class="wks-open" aria-hidden="true">Open ↗</span></div>
       <div class="wks-cap">
         <h2>TYPOGRAPHY</h2>
-        <p>Two books that read themselves — pages paired into spreads, turning on their own, spread after spread.</p>
-        <div class="pst-meta"><span>02 BOOKS / LETTERFORM</span><span>N°02</span></div>
+        <p>Five books and publications — type-led layouts, read spread by spread.</p>
+        <div class="pst-meta"><span>05 BOOKS / LETTERFORM</span><span>N°02</span></div>
       </div>
     </a>
     <a class="pst-item" href="calendar.html">
@@ -81,14 +80,21 @@
         <div class="pst-meta"><span>04 PROJECTS / UX &amp; UI</span><span>N°04</span></div>
       </div>
     </a>
+    <a class="pst-item" href="album-cover.html">
+      <div class="pst-img"><img src="images/album1.jpg" width="1440" height="1440" alt="Do Not Fall album cover" loading="lazy" decoding="async"><span class="wks-open" aria-hidden="true">Open ↗</span></div>
+      <div class="wks-cap">
+        <h2>ALBUM COVER</h2>
+        <p>Two album covers — Do Not Fall and LPRKX6, with their backs and vinyl mock-ups.</p>
+        <div class="pst-meta"><span>MUSIC / ARTWORK</span><span>N°05</span></div>
+      </div>
+    </a>
   </section>
 </main>
 
 <footer class="footer">
-  <span>© TAN 2026</span>
-  <a href="contact.html">Open Contact →</a>
+
 </footer>
 
-<script src="script.js?v=150"></script>
+<script src="script.js?v=151"></script>
 </body>
 </html>
